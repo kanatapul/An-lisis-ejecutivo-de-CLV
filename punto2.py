@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import altair as alt
 import streamlit as st
+import os, streamlit as st
+st.caption(f"Python: {os.popen('python --version').read().strip()} · Archivos: {os.listdir('.')}")
 
 st.set_page_config(page_title="Análisis ejecutivo de CLV para priorización comercial", page_icon=None, layout="wide")
 st.markdown(
@@ -257,3 +259,4 @@ with tab4:
         st.caption(f"Mediana inicial ≈ {start[CLV]:,.0f}. Mediana hacia {int(end['tenure_bin'])} meses ≈ {end[CLV]:,.0f}.")
     else:
         st.info("Se requiere CLV y Months Since Policy Inception para analizar evolución.")
+
